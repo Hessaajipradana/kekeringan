@@ -32,7 +32,7 @@ export default function DaftarLaporan({ onEdit }) {
       try {
         dispatch(muatLaporanMulai());
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/laporan", {
+        const response = await axios.get("https://api-kekeringan-production.up.railway.app/api/laporan", {
           headers: { Authorization: `Bearer ${token}` },
         });
         dispatch(muatLaporanSukses(response.data));
@@ -55,7 +55,7 @@ export default function DaftarLaporan({ onEdit }) {
     if (window.confirm("Apakah Anda yakin ingin menghapus laporan ini?")) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:5000/api/laporan/${id}`, {
+        await axios.delete(`https://api-kekeringan-production.up.railway.app/api/laporan/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         dispatch(hapusLaporan(id));

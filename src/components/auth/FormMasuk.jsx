@@ -28,7 +28,7 @@ export default function FormMasuk() {
     e.preventDefault();
     try {
       dispatch(loginMulai());
-      const response = await axios.post('http://localhost:5000/api/pengguna/masuk', formData);
+      const response = await axios.post('https://api-kekeringan-production.up.railway.app/api/pengguna/masuk', formData);
       dispatch(loginSukses(response.data));
       navigate('/dashboard');
     } catch (error) {

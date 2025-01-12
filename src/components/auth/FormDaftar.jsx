@@ -34,7 +34,7 @@ export default function FormDaftar() {
 
     try {
       setLoading(true);
-      await axios.post('http://localhost:5000/api/pengguna/daftar', {
+      await axios.post('https://api-kekeringan-production.up.railway.app//pengguna/daftar', {
         nama: formData.nama,
         email: formData.email,
         kataSandi: formData.kataSandi
