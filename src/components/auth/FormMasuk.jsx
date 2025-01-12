@@ -1,8 +1,14 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { loginMulai, loginSukses, loginGagal } from '../../store/slices/authSlice';
-import axios from 'axios';
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // Tambahkan import ini di atas
+
+import {
+  loginMulai,
+  loginSukses,
+  loginGagal,
+} from "../../store/slices/authSlice";
+import axios from "axios";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,23 +22,26 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 export default function FormMasuk() {
   const [formData, setFormData] = useState({
-    email: '',
-    kataSandi: ''
+    email: "",
+    kataSandi: "",
   });
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error } = useSelector(state => state.auth);
+  const { loading, error } = useSelector((state) => state.auth);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       dispatch(loginMulai());
-      const response = await axios.post('https://api-kekeringan-production.up.railway.app/api/pengguna/masuk', formData);
+      const response = await axios.post(
+        "https://api-kekeringan-production.up.railway.app/api/pengguna/masuk",
+        formData
+      );
       dispatch(loginSukses(response.data));
-      navigate('/dashboard');
+      navigate("/dashboard");
     } catch (error) {
-      dispatch(loginGagal(error.response?.data?.pesan || 'Terjadi kesalahan'));
+      dispatch(loginGagal(error.response?.data?.pesan || "Terjadi kesalahan"));
     }
   };
 
@@ -62,7 +71,9 @@ export default function FormMasuk() {
                     placeholder="m@example.com"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                   />
                 </div>
                 <div className="grid gap-2">
@@ -72,11 +83,13 @@ export default function FormMasuk() {
                     type="password"
                     required
                     value={formData.kataSandi}
-                    onChange={(e) => setFormData({ ...formData, kataSandi: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, kataSandi: e.target.value })
+                    }
                   />
                 </div>
                 <Button type="submit" disabled={loading} className="w-full">
-                  {loading ? 'Memproses...' : 'Masuk'}
+                  {loading ? "Memproses..." : "Masuk"}
                 </Button>
                 <Button variant="outline" className="w-full">
                   Masuk dengan Google
@@ -84,9 +97,9 @@ export default function FormMasuk() {
               </div>
               <div className="mt-4 text-center text-sm">
                 Belum punya akun?{" "}
-                <a href="/daftar" className="underline underline-offset-4">
+                <Link to="/daftar" className="underline underline-offset-4">
                   Daftar
-                </a>
+                </Link>
               </div>
             </form>
           </CardContent>
