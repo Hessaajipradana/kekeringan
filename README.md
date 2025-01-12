@@ -2,7 +2,7 @@
 
 [![Status Lisensi](https://img.shields.io/badge/lisensi-MIT-blue.svg)](LICENSE)
 [![Terbuka untuk PR](https://img.shields.io/badge/PR-diterima-brightgreen.svg)](CONTRIBUTING.md)
-[![Dibuat dengan Cinta](https://img.shields.io/badge/Dibuat%20dengan-❤️-red.svg)(https://github.com/Hessaajipradana)
+[![Dibuat dengan Cinta](https://img.shields.io/badge/Dibuat%20dengan-❤️-red.svg)](https://github.com/Hessaajipradana)
 
 > 📊 Solusi modern untuk pemantauan dan pelaporan kekeringan berbasis web
 
