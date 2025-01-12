@@ -182,7 +182,7 @@ Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanj
 
 Nama Anda - [@twitteranda](https://twitter.com/twitteranda) - email@contoh.com
 
-Link Proyek: [https://github.com/namakamu/aplikasi-kekeringan](https://github.com/namakamu/aplikasi-kekeringan)
+Link Proyek: [https://github.com/Hessaajipradana/kekeringan](https://github.com/Hessaajipradana/kekeringan)
 
 ---
 
